@@ -35,17 +35,15 @@ jobs:
       - name: Run TestNG Tests
         run: mvn clean test -Denv=${{ github.event.inputs.Environment || 'qa' }}
 
-      # ✅ Install Allure CLI
-      - name: Install Allure
+      # ✅ FIXED: Install Allure CLI (correct package name)
+      - name: Install Allure CLI
         if: always()
-        run: |
-          choco install allure -y
+        run: choco install allure-commandline -y
 
       # ✅ Generate Allure Report
       - name: Generate Allure Report
         if: always()
-        run: |
-          allure generate target/allure-results --clean -o target/allure-report
+        run: allure generate target/allure-results --clean -o target/allure-report
 
       # ✅ Upload Allure Report
       - name: Upload Allure Report
