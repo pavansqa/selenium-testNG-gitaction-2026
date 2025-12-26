@@ -35,17 +35,20 @@ jobs:
       - name: Run TestNG Tests
         run: mvn clean test -Denv=${{ github.event.inputs.Environment || 'qa' }}
 
-      # ✅ FIXED: Install Allure CLI (correct package name)
+      # ✅ FIX: Install Allure via NPM (MOST STABLE)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
       - name: Install Allure CLI
         if: always()
-        run: choco install allure-commandline -y
+        run: npm install -g allure-commandline
 
-      # ✅ Generate Allure Report
       - name: Generate Allure Report
         if: always()
         run: allure generate target/allure-results --clean -o target/allure-report
 
-      # ✅ Upload Allure Report
       - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v4
