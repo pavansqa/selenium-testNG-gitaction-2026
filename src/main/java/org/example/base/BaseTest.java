@@ -25,7 +25,7 @@ import java.nio.file.Paths;
 public class BaseTest {
     public WebDriver driver;
     public JavaScriptUtils js = new JavaScriptUtils();
-    private static final Logger logger = LogManager.getLogger(BaseTest.class);
+    public static final Logger logger = LogManager.getLogger(BaseTest.class);
 
     @BeforeSuite
     public void cleanAllureDirectories() {

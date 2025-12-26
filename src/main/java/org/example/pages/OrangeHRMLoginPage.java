@@ -35,21 +35,26 @@ public class OrangeHRMLoginPage extends BaseTest {
     public void loginHRM(String user, String pass) {
         WaitUtils.waitForElement(driver, hrmTitle);
         js.sendKeys(driver, userName, user);
+        logger.info("User Enter the user name.");
         js.sendKeys(driver, password, pass);
+        logger.info("User Enter the password.");
         js.clickElement(driver, loginButton);
+        logger.info("Click on the login button");
     }
 
     public void verifyLogout() throws InterruptedException {
         WaitUtils.waitForElement(driver, userDropdown);
         js.clickElement(driver, userDropdown);
+        logger.info("Click on the user dropdown.");
         Thread.sleep(2000);
         WaitUtils.waitForElement(driver, logoutButton);
         Assert.assertTrue(logoutButton.isDisplayed(), "Logout CTA is not visible");
+        logger.info("Click on the logout button.");
         js.clickElement(driver, logoutButton);
         Thread.sleep(2000);
         WaitUtils.waitForElement(driver, hrmTitle);
         js.assertDisplay(driver,hrmTitle);
-
+        logger.info("HRM Title is displayed.");
     }
 
 
