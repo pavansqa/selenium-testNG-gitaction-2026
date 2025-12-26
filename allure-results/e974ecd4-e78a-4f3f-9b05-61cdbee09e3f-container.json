@@ -1,0 +1,1 @@
+{"uuid":"e974ecd4-e78a-4f3f-9b05-61cdbee09e3f","name":"org.example.testcases.OrangeHRMLoginTest","children":["afe5d928-eb80-4d62-8703-8b0b3dc9bf51"],"befores":[],"afters":[{"name":"tearDown","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1766728750749,"stop":1766728751179}],"start":1766728734212,"stop":1766728751187}
