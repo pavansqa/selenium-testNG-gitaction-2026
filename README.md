@@ -7,7 +7,7 @@ This is a Maven-based Selenium TestNG automation framework for the Luma eCommerc
 
 ## Project Structure (Maven-based):  
 **Luma (Project Name)**
-- │
+- ├── workflows/testng_demo.yml
 - ├── allure-report/
 - ├── allure-results/
 - ├── logs/
@@ -65,5 +65,29 @@ mvn clean test
 ## Generate Allure Report
 After running the tests, generate the Allure report using:
 ---
-~~allure generate allure-results --clean -o allure-report~~
+allure generate allure-results --clean -o allure-report
+
+### GitHub Actions (CI Integration)
+
+This project is integrated with GitHub Actions to enable automatic test execution.
+
+# CI Triggers
+
+- On push
+
+- On pull request
+
+# CI Highlights
+
+- Runs tests on Ubuntu runner
+
+- Uses Java 17
+
+- Executes TestNG suite using Maven
+
+- Generates Allure results
+
+Workflow file location: .github/workflows/*.yml
+
+Happy Automation 🚀
 
